@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .big{
+            display: flex;
+        }
+        *{font-size: 0px;}
+        .left,.centre,.right{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            border:1px solid #ff6c60;
+            height: 300px;
+        }
+        .left{
+            width: 100px;
+
+        }
+        .right{
+            width: 100px;
+        }
+        .centre{
+            width: calc(100% - 600px);
+        }
+
+    </style>
+</head>
+<body>
+<p>实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化</p>
+<div class="big">
+<div class="left"></div>
+<div class="centre"></div>
+<div class="right"></div>
+</div>
+</body>
+</html>

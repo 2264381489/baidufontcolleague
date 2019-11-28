@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <style>
+        #big{padding: 15px 20px;
+            border: 1px dashed #ff6c60;
+        font-size: 0;
+        box-sizing: content-box;
+        }
+        #on{
+            width: 40px;
+            border: 5px solid #ddd;
+            display: inline-block;
+            box-sizing: border-box;
+            font-size: 14px;
+            vertical-align: top;
+        }
+        #on2{
+            border: 1px solid #ddd;
+            /*margin-right: -160px;*/
+            display: inline-block;
+            width: calc(100% - 40px);
+            box-sizing: border-box;
+            font-size: 14px;
+            vertical-align: top;
+            /*display: inline-block;*/
+        /*  别指望在不定宽的情况下将div用带有负值的margin值来做到减少其长度的情况*/
+        }
+
+    </style>
+</head>
+<body>
+<P>实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化</P>
+<div id="big">
+    <div id="on">左侧固定宽度，右侧根</div>
+    <div id="on2">左侧固定宽度，右侧根</div>
+</div>
+</body>
+</html>

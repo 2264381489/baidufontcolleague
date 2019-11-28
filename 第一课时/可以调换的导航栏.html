@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <style>
+        body{margin: 0 auto;}
+        .info-box{
+            width: 452px;
+
+            height: 400px;
+
+            margin: 20px auto 0;
+        }
+        ul{
+            border: 1px solid #b60000;
+
+            overflow: hidden;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+
+        }
+      .info-box  li{float: left;list-style: none;width: 150px;background: #b60000;height:50px;text-align: center;}
+       .info-box li a{display:inline-block;color: gold;font-weight:bold;line-height: 50px;text-align: center;}
+        li:hover {
+
+            background-color: white;
+
+            color: #b60000;
+
+        }
+        /*这里有一个问题，这里的标签设定问题应该解决。*/
+
+
+      .info-box li.active{
+
+            background-color: white;
+
+            color: gold;
+
+          z-index: 1;
+
+        }
+        #panels{
+            clear: both;
+
+            position: relative;
+
+            height: 352px;
+        /*清楚浮动效果，为子元素做好坐标，设定高度*/
+
+        }
+        .info-box article {
+
+            background-color: #b60000;
+
+            color: white;
+
+            position: absolute;
+
+            padding: 10px 20px;
+
+            height: 352px;
+
+            top: 0;
+
+            left: 0;
+
+        }
+    /* 给三个article设置同样的位置，让他们摞在一起*/
+        .info-box .active-panel {
+
+            z-index: 1;
+
+        }
+    /*    设定一个用来改变效果的属性*/
+    </style>
+</head>
+<body>
+<div class="info-box">
+    <ul>
+        <li class="active"><a>tab1</a></li>
+        <li><a>tab2</a></li>
+        <li><a>tab3</a></li>
+    </ul>
+    <div id="panels">
+        <article class="active-panel">
+            一号画布
+
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque turpis nibh, porttitor nec venenatis eu, pulvinar in augue. Vestibulum et orci scelerisque, vulputate tellus quis, lobortis dui. Vivamus varius libero at ipsum mattis efficitur ut nec nisl. Nullam eget tincidunt metus. Donec ultrices, urna maximus consequat aliquet, dui neque eleifend lorem, a auctor libero turpis at sem. Aliquam ut porttitor urna. Nulla facilisi.</p>
+
+        </article>
+        <article>
+            二号画布
+
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque turpis nibh, porttitor nec venenatis eu, pulvinar in augue. Vestibulum et orci scelerisque, vulputate tellus quis, lobortis dui. Vivamus varius libero at ipsum mattis efficitur ut nec nisl. Nullam eget tincidunt metus. Donec ultrices, urna maximus consequat aliquet, dui neque eleifend lorem, a auctor libero turpis at sem. Aliquam ut porttitor urna. Nulla facilisi.</p>
+
+        </article>
+        <article>
+            三号画布
+
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque turpis nibh, porttitor nec venenatis eu, pulvinar in augue. Vestibulum et orci scelerisque, vulputate tellus quis, lobortis dui. Vivamus varius libero at ipsum mattis efficitur ut nec nisl. Nullam eget tincidunt metus. Donec ultrices, urna maximus consequat aliquet, dui neque eleifend lorem, a auctor libero turpis at sem. Aliquam ut porttitor urna. Nulla facilisi.</p>
+
+        </article>
+
+    </div>
+</div>
+
+</body>
+<script>
+    window.onload=function () {
+        var num=0;
+    var li=document.getElementsByTagName('li');
+        var panel=document.getElementsByTagName('article');
+    for (var i=0;i<li.length;i++)
+        {
+            num=i;
+
+            li[i].onclick = function div() {
+
+                console.log('开始执行');
+                for (var j = 0; j < li.length; j++) {
+                    li[j].className = '';
+                }
+
+                this.className='active';
+                for (var i=0;i<li.length;i++){
+                    console.log('进入清理循环');
+                    if (li[i].className=="active"){
+                        console.log('ok1');
+                        for (var num=0;num<li.length;num++){
+                            panel[num].className=' ';
+                        }
+                        panel[i].className='active-panel';
+                    }else {
+                        console.log(false);
+                    }
+
+            }
+            // panel[].className='active-panel';
+        }
+    // for (var i=0;i<li.length;i++){
+    //     console.log('ok');
+    //     if (li[i].className=="active"){
+    //         console.log('ok1');
+    //         panel[i].className='active-panel';
+    //     }else {
+    //         console.log(false);
+    //     }
+    }
+
+
+
+
+
+
+
+
+    }
+</script>
+</html>
